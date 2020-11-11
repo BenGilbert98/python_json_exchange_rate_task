@@ -12,26 +12,28 @@
 
 ## Solution
 - Since we are using a json file we must ```import json```
+- Json is used to convert the json file into a python dictionary so it can be iterated through
 - The next step is to define a function for our solution
 - Inside the function we have to assign a variable to the converted json file (shown below)
-```
+``` python
 def Find_exchange_rate():
     with open("exchange_rates.json", "r") as jsonfile:
         exchange_rates = json.load(jsonfile)
 ```
 - Then, the iterative method is added 
-```
+- It will iterate through the nested dictionary "rates" and will print each key value pair
+``` python
         for key in exchange_rates["rates"]:
             print(f"Currency : {key}, Exchange Rate : {exchange_rates['rates'][key]}")
 ```
-This will iterate for every key in the nested dictionary "rates" and print the key and value
+
 - Finally the function must be called
-```
+``` python
 Find_exchange_rate()
 ```
 
-### All together :
-```
+### All together 
+``` python
 import json
 
 
